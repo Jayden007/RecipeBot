@@ -1,0 +1,6 @@
+model_checkpoint_path: "/root/nlp/RecipeBot/data/model/model.ckpt-17000-?????-of-00001"
+all_model_checkpoint_paths: "/root/nlp/RecipeBot/data/model/model.ckpt-16800-?????-of-00001"
+all_model_checkpoint_paths: "/root/nlp/RecipeBot/data/model/model.ckpt-16801-?????-of-00001"
+all_model_checkpoint_paths: "/root/nlp/RecipeBot/data/model/model.ckpt-16900-?????-of-00001"
+all_model_checkpoint_paths: "/root/nlp/RecipeBot/data/model/model.ckpt-16901-?????-of-00001"
+all_model_checkpoint_paths: "/root/nlp/RecipeBot/data/model/model.ckpt-17000-?????-of-00001"
