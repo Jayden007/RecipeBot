@@ -19,16 +19,15 @@ def prompt(entType):
     if entType == 'LOCATION':
         templates = ['어디요?', '위치를 말씀해주세요!', '위치는요?']
         promptMessage = random.choice(templates)
-        pprint(promptMessage)
+
         # 이 result를 보내고 답이 올 때까지 대기한다?
         # 그렇다면 이 대답을 기다릴 때는 IntentClassifier 안거치고 일로 바로 오도록 해야하네?
-        result = raw_input().decode('utf-8')   # 임시
         
-    else: # 엔티티 객체가 아니라면 대답인걸로 간주! (stack 메모리 뒤져서 일로 답을 보낸다)
-        result = entType
+# 엔티티 객체가 아니라면 대답인걸로 간주! (stack 메모리 뒤져서 일로 답을 보낸다)
+
         
     
-    return result
+    return promptMessage
 
 def gridxy(location):
     location = urllib.pathname2url(location.encode('utf8'))
@@ -141,15 +140,24 @@ def parseWeather(lat, lon):
 
     return wdata
 
-def getWeather(entities,location='',_date=datetime.datetime.now()):
+def getWeather(entities,stack,location='',_date=datetime.datetime.now()):
     """필요 ENTITIES : Location, DATE"""
-    if 'DATE' in entities.keys():
+    
+    if stack['DATE'] != 0:
+        temp_date = stack['DATE']
+    
+    elif 'DATE' in entities.keys():
         temp_date = entities['DATE']
     
-    if 'LOCATION' in entities.keys():
+    if stack['LOCATION'] != None:
+        location = stack['LOCATION']
+    
+    elif 'LOCATION' in entities.keys():
         location = entities['LOCATION']
+        
     else:
-        location = '수지구' # 쓰레드의 조인 기능? 그런거 이용해야 하나... 어떻게 하지
+        return 'ERLOCATION'
+       # location = '수지구' # 쓰레드의 조인 기능? 그런거 이용해야 하나... 어떻게 하지
         # 로케를 입력받아 정확히 입력받았는지 확인하는 과정 필요
         # 만약 로케가 아니라면 다시 되 물어야 할듯,,,? prompt 함수에 되묻기 옵션으로!
         # 계속 엉뚱한 대답해대면 예를 들어 3번동안, 모르겠다고 출력하고 종료

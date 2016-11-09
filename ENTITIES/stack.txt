@@ -1,0 +1,10 @@
+(dp0
+S'DATE'
+p1
+I0
+sS'prompt'
+p2
+I00
+sS'LOCATION'
+p3
+Ns.
