@@ -1,10 +1,12 @@
 (dp0
-S'DATE'
+VDATE
 p1
-I0
-sS'prompt'
+I1
+sVprompt
 p2
 I00
-sS'LOCATION'
+sVLOCATION
 p3
-Ns.
+V\uc815\uc790\ub3d9
+p4
+s.
