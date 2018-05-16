@@ -25,13 +25,14 @@ function setDate(){
 }
 
 function insertMessage() {
-  msg = $('.message-input').val();
+  msg = $('.messages-content').val();
+
   if ($.trim(msg) == '') {
     return false;
   }
   $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
   setDate();
-  $('.message-input').val(null);
+  $('.messages-content').val(null);
   updateScrollbar();
 	interact(msg);
   setTimeout(function() {
@@ -66,6 +67,22 @@ function interact(message){
     setDate();
     updateScrollbar();
 
+    // try tts
+
+    $.post('/tts_out/' + reply['text'], {
+    }).done(function(replytts) {
+        var audio = document.getElementById('player');
+        audio.setAttribute('src', '/static/hello.mp3');
+        audio.play();
+    });
+
+    /*
+    var audio = document.getElementById('player');
+
+    audio.setAttribute('preload', "none");
+    audio.setAttribute('src', 'tts_out/' + reply['text']);
+    audio.play();
+    */
 		}).fail(function() {
 				alert('error calling function');
 				});

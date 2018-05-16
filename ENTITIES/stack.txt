@@ -1,12 +1,10 @@
 (dp0
-VDATE
+Vprompt
 p1
-I1
-sVprompt
+L0L
+sVDATE
 p2
-I00
+L0L
 sVLOCATION
 p3
-V\uc815\uc790\ub3d9
-p4
-s.
+Ns.

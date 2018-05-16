@@ -1,1 +1,0 @@
-{"continue_training": true, "optimizer": "Adam", "verbose": 1, "class_name": "TensorFlowEstimator", "learning_rate": 0.001, "batch_size": 128, "steps": 100, "n_classes": 1199, "clip_gradients": 5.0}

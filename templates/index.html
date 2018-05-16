@@ -1,40 +1,56 @@
 <!DOCTYPE html>
-<html >
-	<head>
-		<meta charset="UTF-8">
-		<title>@AlphaDong</title>
+<html>
 
-		<link rel="stylesheet" href="static/css/normalize.css">
+<head>
+	<meta charset="utf-8">
+	<meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Hi~ Banana</title>
 
-		<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-		<link rel='stylesheet prefetch' href='/static/js/jquery.mCustomScrollbar.min.css'>
-		<link rel="stylesheet" href="static/css/style.css">
-		<script src="/static/js/jquery-latest.js"></script>
-	</head>
+	<link rel="icon" type="image/ico" href="static/res/bananas.png" />
+	<link rel="stylesheet" href="static/css/normalize.css">
+	<link rel='stylesheet prefetch' href="https://fonts.googleapis.com/css?family=Nanum+Gothic" />
+	<link rel='stylesheet prefetch' href='/static/js/jquery.mCustomScrollbar.min.css'>
+	<link rel="stylesheet" href="static/css/style.css">
+	<script src="/static/js/jquery-latest.js"></script>
 
-	<body onload="init()" id="page_body">
+</head>
 
-<div class="chat">
-<div class="chat-title">
-	<h1>AlphaDong</h1>
-	<h2>Ask Me Anything</h2>
-	<figure class="avatar">
-		<img src="static/res/botim.png" /></figure>
-</div>
-<div class="messages">
-	<div class="messages-content"></div>
-</div>
-<div class="message-box">
-	<textarea type="text" class="message-input" placeholder="Type message..."></textarea>
-	<button type="submit" class="message-submit">Send</button>
-</div>
+<!--body onload="init()" id="page_body"-->
 
-</div>
-<div class="bg"></div>
-		<script src='/static/js/jquery.min.js'></script>
-<script src='/static/js/jquery.mCustomScrollbar.concat.min.js'></script>
+<body id="page_body">
 
-				<script src="static/js/index.js"></script>
+	<div class="chat">
+		<div class="chat-title">
+			<h1>Hi~ Banana</h1>
+			<h2>Play Talk</h2>
+			<figure class="avatar">
+				<img src="static/res/bananas.png" />
+			</figure>
+		</div>
+		<div class="messages">
+			<div class="messages-content"></div>
+		</div>
+		<div class="message-box">
+			<textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+			<button type="submit" id="btn-mic" class="message-submit">Talk to Banana</button>
+		</div>
 
-	</body>
+	</div>
+	<div class="bg"></div>
+	<script src='/static/js/jquery.min.js'></script>
+	<script src='/static/js/DetectRTC.js'></script>
+	<script src='/static/js/jquery.mCustomScrollbar.concat.min.js'></script>
+
+	<audio id="player"></audio>
+
+	<script src="static/js/main.js"></script>
+	<!-- <script src="static/js/index.js"></script> -->
+    <script src="static/js/highlight.min.js"></script>
+    <script src="static/js/global.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+</body>
+
 </html>
