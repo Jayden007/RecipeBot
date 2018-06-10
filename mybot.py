@@ -69,7 +69,7 @@ def reply():
 
         # Sentences we'll respond with if the user greeted us
     GREETING_KEYWORDS = ("하이", "안녕", "안뇽", "하잉",
-                     "하이여","하이요","하이하이", "안녕하세요",)
+                     "하이여","하이요","하이하이", "안녕하다",) # 형태소기 떄문에 안녕하세요가 안녕하다가 되야함
     WEATHER_KEYWORDS = ("날씨", "예보", "기상")
     MOVIE_KEYWORDS = ("영화", "무비", "movie", "cinema")
 
@@ -82,7 +82,8 @@ def reply():
             intent = 2
         elif word.lower() in MOVIE_KEYWORDS:
             intent = 3
-            
+
+    print("intent=%d" % intent)
     # 먼저 Intent 분석 후
     # 필요 엔티티 리스트 정의, 현재는 그냥 ['DATE']
     
@@ -116,7 +117,7 @@ def reply():
             reply = getWeather.getWeather(ent,stack)
 
             if reply[:2] == 'ER':
-                stack['prompt'] = True
+                stack['prompt'] = intent
                 with open("ENTITIES/stack.txt", 'wb') as f:
                     pickle.dump(stack, f, protocol=0)
 
@@ -124,7 +125,7 @@ def reply():
 
                 reply = getWeather.prompt(reply[2:])
             # add non response on error(?) - 처리하기 intent 없는 경우만
-        
+
         elif intent == 3:  # Movie
             reply = getMovie.getMovie(ent, stack)
 
