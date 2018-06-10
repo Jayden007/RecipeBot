@@ -62,7 +62,7 @@ class BoxOffice(object):
 
 def getMovie(entities,stack,location='',_date=datetime.now()):
     """필요 ENTITIES : Location, DATE"""
-    API_KEY = '96c72f19172f1117e343285fc7bdea35'
+    API_KEY = ''
 
     if stack['DATE'] != 0:
         temp_date = stack['DATE']
